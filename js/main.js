@@ -206,15 +206,6 @@ function renderTable(data) {
   var content = "";
   for (var i = 0; i < data.length; i++) {
     var nv = data[i];
-    // content += "<tr>";
-    // content += "<td>" + nv.taiKhoan + "</td>";
-    // content += "<td>" + nv.hoVaTen + "</td>";
-    // content += "<td>" + nv.email + "</td>";
-    // content += "<td>" + nv.ngayLam + "</td>";
-    // content += "<td>" + nv.chucVu + "</td>";
-    // content += "<td>" + nv.tongLuong + "</td>";
-    // content += "<td>" + nv.loai + "</td>";
-    // content += "</tr>";
     var numberFormat = new Intl.NumberFormat("VN-vn");
     content += `
         <tr>
@@ -270,10 +261,7 @@ function xoaNV(taiKhoan) {
 function suaNV(taiKhoan) {
   var nv = dsnv.layThongTinChiTietNV(taiKhoan);
   if (nv) {
-    //DOM TỚI CÁC THẺ INPUT ĐỂ SHOW INFO
-    //show giá trị input là value
     getEle("tknv").value = nv.taiKhoan;
-    //không cho chỉnh sửa mã sinh viên
     getEle("tknv").disabled = true;
     getEle("name").value = nv.hoVaTen;
     getEle("email").value = nv.email;
@@ -288,10 +276,8 @@ function suaNV(taiKhoan) {
   getEle("btnCapNhat").style.display = "inline-block";
 }
 getEle("btnCapNhat").onclick = function () {
-  //lấy lại thông tin người dùng chỉnh sửa
   var nv = layThongTinNhanVien(false);
   if (nv) {
-    //cập nhật lại dssv
     dsnv.capNhatNV(nv);
     renderTable(dsnv.arr);
     setLocalStorage();
