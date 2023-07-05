@@ -30,11 +30,6 @@ function DSNV() {
     }
   };
   this.capNhatNV = function (nv) {
-    // //reset #errormaSV --> display none
-    // document.getElementById('errorMaSV').style.display = 'none';
-    // document.getElementById('errorMaSV').innerHTML = '';
-
-    //tìm vị trí sv cần update
     var index = this._timViTri(nv.taiKhoan);
     if (index !== -1) {
       this.arr[index] = nv;

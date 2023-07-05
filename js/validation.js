@@ -12,7 +12,6 @@ function Validation() {
     return true;
   };
   this.kiemTraDoDaiKiTu = function (value, errorId, mess, min, max) {
-    //.trim() để không tính khoảng trắng trong chỗ người dùng nhập, bỏ đầu bỏ đuôi khoảng trắng chỉ lấy kí tự
     if (min <= value.trim().length && value.trim().length <= max) {
       //true
       getEle(errorId).innerHTML = "";
