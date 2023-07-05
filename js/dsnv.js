@@ -40,15 +40,15 @@ function DSNV() {
       this.arr[index] = nv;
     }
   };
-  this.timKiemNV = function(keyword){
+  this.timKiemNV = function (keyword) {
     var mangTimKiem = [];
-    for (var i = 0; i < this.arr.length; i++){
-        var nv = this.arr[i];
-        var keywordLowerCase = keyword.toLowerCase();
-        var loaiNVLowerCase = nv.loai.toLowerCase();
-        if (loaiNVLowerCase.indexOf(keywordLowerCase) !== -1) {
-            mangTimKiem.push(nv);
-          }
+    for (var i = 0; i < this.arr.length; i++) {
+      var nv = this.arr[i];
+      var keywordLowerCase = keyword.toLowerCase();
+      var loaiNVLowerCase = nv.loai.toLowerCase();
+      if (loaiNVLowerCase.indexOf(keywordLowerCase) !== -1) {
+        mangTimKiem.push(nv);
+      }
     }
     return mangTimKiem;
   };
