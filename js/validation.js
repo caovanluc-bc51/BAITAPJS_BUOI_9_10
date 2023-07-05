@@ -76,5 +76,4 @@ function Validation() {
     getEle(errorId).style.display = "none";
     return true;
   };
-  
 }
