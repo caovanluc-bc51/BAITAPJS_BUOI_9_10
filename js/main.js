@@ -59,18 +59,18 @@ function layThongTinNhanVien(isAdd) {
         "errorTaiKhoan",
         "(*) Vui lòng nhập tên tài khoản"
       ) &&
-      validation.kiemTraDoDaiKiTu(
-        taiKhoan,
-        "errorTaiKhoan",
-        "(*) Vui lòng nhập vào 4 đến 6 chữ số",
-        4,
-        6
-      ) &&
       validation.checkPattern(
         taiKhoan,
         "errorTaiKhoan",
         "(*) Vui lòng nhập tài khoản bằng chữ số",
         /^[0-9]+$/
+      ) &&
+      validation.kiemTraDoDaiKiTu(
+        taiKhoan,
+        "errorTaiKhoan",
+        "Tên tài khoản từ 4 đến 6 chữ số",
+        4,
+        6
       ) &&
       validation.kiemTraTaiKhoanDaTonTai(
         taiKhoan,
@@ -89,7 +89,7 @@ function layThongTinNhanVien(isAdd) {
     validation.checkPattern(
       hoVaTen,
       "errorHoVaTen",
-      "(*) Vui lòng nhập họ tên bằng chữ",
+      "(*) Vui lòng nhập họ tên bằng chữ cái",
       "^[a-zA-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" +
         "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" +
         "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$"
@@ -133,7 +133,7 @@ function layThongTinNhanVien(isAdd) {
     validation.checkPattern(
       ngayLam,
       "errorNgayLam",
-      "Vui lòng nhập ngày làm đúng định dạng tháng/ngày/năm",
+      "Vui lòng nhập ngày làm theo định dạng tháng/ngày/năm",
       /^((0?[1-9]|1[012])[/](0?[1-9]|[12][0-9]|3[01])[/](19|20)?[0-9]{2})*$/
     );
   //validaion luongCoBan
